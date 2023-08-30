@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+// import Conteudo from '../Conteudo';
+import Logo from './assets/logo.png'
 import './App.css';
 
-export default function App() {
+const Topo = () =>  {
+  const [corTema, setCorTema] = useState("tema-light");
+
+  const trocarTema = () => {
+    setCorTema(corTema === "tema-light" ? "tema-dark" : "tema-light");
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className = {corTema}>
+      <img className = {corTema} src={Logo} alt="logo"/>
+      <button onClick = {() => trocarTema()}>Trocar Tema</button>
+      <p>BLABLABLABLABLA;</p>
     </div>
   );
 }
+
+export default Topo;
