@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "testes",
   "version": "0.1.0",
   "private": true,
